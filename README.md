@@ -1,5 +1,7 @@
 # dart_box2d_wasm
 
+The .wasm file comes from [box2d-wasm](https://github.com/Birch-san/box2d-wasm)
+
 One-time setup - run:
 
 ```sh
@@ -13,7 +15,7 @@ dart run wasm:setup
 This part runs and successfully creates the text file:
 
 ```dart
-final data = File('Box2D.bare.wasm').readAsBytesSync();
+final data = File('Box2D.wasm').readAsBytesSync();
 final mod = WasmModule(data);
 File('out.text').writeAsStringSync(mod.describe());
 ```
