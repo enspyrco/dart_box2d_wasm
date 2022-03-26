@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:wasm/wasm.dart';
 
 void main(List<String> arguments) {
-  final data = File('Box2D.simd.bare.wasm').readAsBytesSync();
+  final data = File('box2d.wasm').readAsBytesSync();
   final mod = WasmModule(data);
   // File('out3.text').writeAsStringSync(mod.describe());
 
