@@ -10,7 +10,11 @@ void main(List<String> arguments) {
   var instanceBuilder = mod.builder();
   instanceBuilder.enableWasi();
   final instance = instanceBuilder.build();
-  final shape =
-  instance.lookupFunction('emscripten_bind_b2PolygonShape_b2PolygonShape_0');
-  print(shape());
+
+  var b2Vec2Fn2 = instance.lookupFunction('emscripten_bind_b2Vec2_b2Vec2_2');
+  var vecPtr = b2Vec2Fn2(10.0, 5.0);
+  var b2Vec2LenghtFn0 =
+      instance.lookupFunction('emscripten_bind_b2Vec2_Length_0');
+  var length = b2Vec2LenghtFn0(vecPtr);
+  print(length);
 }
