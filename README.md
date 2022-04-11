@@ -1,11 +1,12 @@
 # dart_box2d_wasm
 
-*Experimenting Dart/WASM interop in a Dart app.*
+*Experimenting with Dart/WASM interop in a Dart app.*
 
-The .wasm file comes from [box2d-wasm](https://github.com/Birch-san/box2d-wasm) where I
+The `Box2D.wasm` file comes from [box2d-wasm](https://github.com/Birch-san/box2d-wasm) where I:
 
-- followed the instructions in the READMEs to build
-- copied `Box2D.wasm` from <repo>/box2d-wasm/dist/umd/Box2D.wasm
+- removed JS specific code from the C++ glue files before building (see [flutter_box2d plugin] for more details)
+- otherwise, followed the instructions in the READMEs to build
+- copied the `Box2D.wasm` file resulting from the build into this project
 
 ## One-time setup
 
@@ -26,5 +27,7 @@ The Dart app:
 - loads the wasm as a `WasmModule`
 - prints the available symbols
 - builds an instance from the module
-- looks up a functions in the instance for Box2D Vectors
+- looks up functions in the instance
 - uses the functions to create a vector and calculate its length
+
+[flutter_box2d plugin]: https://www.notion.so/enspyrco/Box2D-Plugin-3d3dc861ee4f439eb7e26deee3bac40a
